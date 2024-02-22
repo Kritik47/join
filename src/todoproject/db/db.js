@@ -1,6 +1,6 @@
 const mongoose=require('mongoose');
-mongoose.connect("mongodb://127.0.0.1:27017/TODOLIST").then(()=>{
-    console.log("Connection......");
+mongoose.connect("mongodb+srv://KRITIKKUMAR:MUNDABENZ@cluster0.qyvjbzi.mongodb.net/TODO?retryWrites=true&w=majority&appName=Cluster0").then(()=>{
+    console.log("MongoooAtlas.....");
 }).catch((e)=>{
     console.log(e);
 })
