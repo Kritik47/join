@@ -1,10 +1,9 @@
 const express=require('express');
-const cors=require('cors');
 const app=express();
-require('./todoproject/db/db');
+const cors=require('cors');
 app.use(cors());
-app.use(require('./todoproject/route/route'));
-app.use(require('./todoproject/signroute/signroute'));
-app.listen(5000,()=>{
-    console.log("i am listening in port 500");
-})
+require('./relation/lib/db');
+app.use(require('./relation/router/router'));
+app.listen(8000,()=>{
+   console.log("listening in port 8000...");
+}) 

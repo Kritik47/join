@@ -45,4 +45,12 @@ router.delete('/todoapp/:id',async(req,res)=>{
         res.status(400).send({"msg":"something wrong in get method"})
     }
 })
+router.get('/search/:key',async(req,res)=>{
+    let result=await todos.find({
+        "$or":[{
+            title:{$regex:req.params.key}
+        }]
+    })
+    res.send(result);
+})
 module.exports=router;
