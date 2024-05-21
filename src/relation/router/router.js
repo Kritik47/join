@@ -27,7 +27,7 @@ router.get('/relation/:id',async(req,res)=>{
         res.status(400).send("Getting throug id Errrr");
     }
 })
-router.post('/relation/:id',async(req,res)=>{
+router.put('/relation/:id',async(req,res)=>{
     try{
         const m=await people.updateOne({_id:req.params.id},{$set:req.body});
         res.status(200).send(m);
@@ -53,5 +53,4 @@ router.get('/searching/:id',async(req,res)=>{
         res.status(400).send("searching Errrr");
     }
 })
-
 module.exports=router;
